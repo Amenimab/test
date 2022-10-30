@@ -7,14 +7,18 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 from math import *
 
-from sklearn.neighbors import DistanceMetric
+#from sklearn.neighbors import DistanceMetric
 
 np.seterr(divide='ignore', invalid='ignore')
 
-a=pd.read_csv(r'2002TRQEHZA.csv',usecols=[0])
-b=pd.read_csv(r'2002TRQEHZA.csv',usecols=[1])
+csv_name = '2002A16HHEA.csv'
+
+a=pd.read_csv(csv_name,usecols=[0])
+b=pd.read_csv(csv_name,usecols=[1])
 n=len(a)
 dt=0.025 #time increment in each data
+# for i in a.values.flatten():
+#     print(float(i)*9.81)
 acc=a.values.flatten()*9.81 #to convert DataFrame to 1D array
 Temps=b.values.flatten() #to convert DataFrame to 1D array
 #acc & Time values must be in numpy array format for half way mirror calculation
