@@ -149,6 +149,29 @@ plt.title("Nombre de cycles en fonction de la distance")
 plt.xlabel("Distance")
 plt.ylabel("Nombre de cycles")
 
-plt.show()
-    #print(sampling_rate)
+#plt.show()
+
+
+####################
+### SAVE 2 FILES ###
+####################
+
+# Nombre de cycles en fonction de l'acc max :
+file_name1 = "nombre_cyles_acc_max.csv"
+open(file_name1, "a").write("acc max,nombre_cycles\n")
+for i in range(len(acceleration_max_list)):
+    open(file_name1, "a").write(str(acceleration_max_list[i]))
+    open(file_name1, "a").write(",")
+    open(file_name1, "a").write(str(nombre_cycles_list[i]))
+    open(file_name1, "a").write("\n")
+
+# Nombre de cycles en fonction de l'acc max :
+file_name2 = "nombre_cyles_distance.csv"
+open(file_name2, "a").write("distance,nombre_cycles\n")
+for i in range(len(acceleration_max_list)):
+    open(file_name2, "a").write(str(distance_list[i]))
+    open(file_name2, "a").write(",")
+    open(file_name2, "a").write(str(nombre_cycles_list[i]))
+    open(file_name2, "a").write("\n")
+
 
